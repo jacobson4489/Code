@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "04b7f159-1dab-4635-a94f-ebb94fa043f5": {
+      "ProjectGuid": "04b7f159-1dab-4635-a94f-ebb94fa043f5",
+      "DisplayName": "GolfStats",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
