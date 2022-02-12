@@ -15,9 +15,9 @@ namespace GolfStats.Controllers
     }
 
     [HttpGet]
-    public string GetMessage()
+    public string GetGolfStats()
     {
-      return "Welcome to Golf Stats!";
+      return "Welcome to the Golf Stats API!";
     }
   }
 }
