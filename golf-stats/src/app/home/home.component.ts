@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
     this.getMessage();
   }
 
-  getMessage() {
+  getGolferName() {
     var golferName = "NOT_FOUND_ERROR";
 
     this.getMessageFromAPI().this.service.function
@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
     return golferName;
   }
 
-  getMessageFromAPI() : Promise {
+  getMessageFromAPI() : Promise<any> {
     const url = new URL('https://localhost:7020/golf-stats/GetGolferById?golferId=2');
   }
 }
