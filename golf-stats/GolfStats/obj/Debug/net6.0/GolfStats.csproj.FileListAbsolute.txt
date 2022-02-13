@@ -25,3 +25,9 @@ C:\Users\jacob\Documents\Code\golf-stats\GolfStats\obj\Debug\net6.0\GolfStats.dl
 C:\Users\jacob\Documents\Code\golf-stats\GolfStats\obj\Debug\net6.0\ref\GolfStats.dll
 C:\Users\jacob\Documents\Code\golf-stats\GolfStats\obj\Debug\net6.0\GolfStats.pdb
 C:\Users\jacob\Documents\Code\golf-stats\GolfStats\obj\Debug\net6.0\GolfStats.genruntimeconfig.cache
+C:\Users\jacob\Documents\Code\golf-stats\GolfStats\bin\Debug\net6.0\System.Web.Razor.dll
+C:\Users\jacob\Documents\Code\golf-stats\GolfStats\bin\Debug\net6.0\System.Web.Helpers.dll
+C:\Users\jacob\Documents\Code\golf-stats\GolfStats\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
+C:\Users\jacob\Documents\Code\golf-stats\GolfStats\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
+C:\Users\jacob\Documents\Code\golf-stats\GolfStats\bin\Debug\net6.0\System.Web.WebPages.dll
+C:\Users\jacob\Documents\Code\golf-stats\GolfStats\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
