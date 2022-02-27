@@ -4,9 +4,9 @@ namespace MyGolfStats.Controllers
 {
 	[ApiController]
 	[Route("[controller]")]
-	public class GolfersController : ControllerBase
+	public class GolferController : ControllerBase
 	{
-		private readonly ILogger<GolfersController> _logger;
+		private readonly ILogger<GolferController> _logger;
 		private readonly Golfer golfer = new Golfer
 		{
 			Id = 1,
@@ -15,7 +15,7 @@ namespace MyGolfStats.Controllers
 			BirthDate = new DateTime(1982, 6, 26)
 		};
 
-		public GolfersController(ILogger<GolfersController> logger)
+		public GolferController(ILogger<GolferController> logger)
 		{
 			_logger = logger;
 		}
