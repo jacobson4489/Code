@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'dev-my-golf-stats'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2532C23DB53D4715835CE74E150B8799 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9C9CAE732AD248E5AE8A2A7C4A628ACD }}
           package: .
