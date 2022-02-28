@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace MyGolfStats.Controllers
 {
 	[ApiController]
-	[Route("[controller]")]
+	[Route("Golfer")]
 	public class GolferController : ControllerBase
 	{
 		private readonly ILogger<GolferController> _logger;
