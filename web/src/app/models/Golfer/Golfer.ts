@@ -1,7 +1,7 @@
 export class Golfer {
-  public Id: number;
-  public FirstName: string;
-  public LastName: string;
-  public BirthDate: Date;
-  public Age: number;
+  public id: number;
+  public firstName: string;
+  public lastName: string;
+  public birthDate: Date;
+  public age: number;
 }

@@ -3,12 +3,20 @@ import { HttpClient } from '@angular/common/http';
 import { Golfer } from '../../models/Golfer/Golfer'
 import { Observable } from 'rxjs';
 
-@Injectable()
-export class GolferService {
-  private _golferApiUrl: string = 'http://localhost:7158/Golfer'
-  constructor(httpClient: HttpClient) { }
+@Injectable({
+  providedIn: 'root'
+})
 
-  public getAll() : Observable<Golfer[]> {
-    return this.httpClient.get(this._golferApiUrl + '/GetAll').map();
+export class GolferService {
+  private golferApiUrl = 'http://localhost:7158/Golfer'
+
+  constructor(private http: HttpClient) { }
+
+  public getAll(): Observable<Golfer[]> {
+    return this.http.get<Golfer[]>(this.golferApiUrl + '/GetAll');
+  }
+
+  public getById(id: number): Observable<Golfer> {
+    return this.http.get<Golfer>(this.golferApiUrl + `/GetById/${id}`);
   }
 }
