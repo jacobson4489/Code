@@ -8,15 +8,17 @@ import { Observable } from 'rxjs';
 })
 
 export class GolferService {
-  private golferApiUrl = 'http://localhost:7158/Golfer'
+  private golferApiUrl = 'https://localhost:7158/api/Golfers'
 
   constructor(private http: HttpClient) { }
 
-  public getAll(): Observable<Golfer[]> {
-    return this.http.get<Golfer[]>(this.golferApiUrl + '/GetAll');
+  public getAll(): Observable<Golfer[]>{
+    const path = this.golferApiUrl + `/GetAll`;
+    return this.http.get<Golfer[]>(path);
   }
 
   public getById(id: number): Observable<Golfer> {
-    return this.http.get<Golfer>(this.golferApiUrl + `/GetById/${id}`);
+    const path = this.golferApiUrl + `/${id}`;
+    return this.http.get<Golfer>(path);
   }
 }

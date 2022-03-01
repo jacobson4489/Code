@@ -14,13 +14,18 @@ export class GolferComponent implements OnInit {
   constructor(private golferService: GolferService) { }
 
   ngOnInit() {
-    this.getGolfer(62682);
+    this.getGolfer(1);
   }
 
   private getGolfer(id: number) {
     this.golferService.getById(id).subscribe(response => {
       this.golfer = response;
-      console.log(this.golfer);
+    });
+  }
+
+  private getAllGolfers() {
+    this.golferService.getAll().subscribe(response => {
+      this.golfer = response[2];
     });
   }
 }

@@ -1,0 +1,24 @@
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Golfer](
+	[GolferID] [int] IDENTITY(1,1) NOT NULL,
+	[FirstName] [varchar](100) NOT NULL,
+	[LastName] [varchar](100) NOT NULL,
+	[EmailAddress] [varchar](100) NULL,
+	[BirthDate] [datetime] NULL,
+	[IsActive] [bit] NOT NULL,
+	[WhenCreated] DATETIME NOT NULL DEFAULT GETDATE(),
+	[WhenModified] DATETIME NOT NULL DEFAULT GETDATE()
+PRIMARY KEY CLUSTERED 
+(
+	[GolferID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Golfer] ADD  DEFAULT ((1)) FOR [IsActive]
+GO

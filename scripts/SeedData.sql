@@ -1,0 +1,11 @@
+INSERT INTO Golfer (FirstName, LastName) VALUES ('Tony', 'Jacobson')
+INSERT INTO Golfer (FirstName, LastName) VALUES ('Mark', 'Jacobson')
+INSERT INTO Golfer (FirstName, LastName) VALUES ('Eric', 'Jacobson')
+INSERT INTO Golfer (FirstName, LastName) VALUES ('Brad', 'Mikulice')
+
+INSERT INTO Course (Name, State, Country) VALUES ('Washington County Golf Course', 'WI', 'United States')
+INSERT INTO Course (Name, State, Country) VALUES ('Hartford Golf Club', 'WI', 'United States')
+INSERT INTO Course (Name, State, Country) VALUES ('Oakwood Park', 'WI', 'United States')
+INSERT INTO Course (Name, State, Country) VALUES ('Whitnall Park', 'WI', 'United States')
+INSERT INTO Course (Name, State, Country) VALUES ('Brown Deer Park', 'WI', 'United States')
+INSERT INTO Course (Name, State, Country) VALUES ('Dretzka Park', 'WI', 'United States')

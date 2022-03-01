@@ -1,14 +1,18 @@
+#nullable disable
+using System.ComponentModel.DataAnnotations;
+
 namespace MyGolfStats
 {
 	public class Golfer
 	{
-		public int Id { get; set; }
+		[Key]
+		public int GolferID { get; set; }
 
-		public string FirstName { get; set; } = String.Empty;
+		public string FirstName { get; set; }
 
-		public string LastName { get; set; } = String.Empty;
+		public string LastName { get; set; }
 
-		public string EmailAddress { get; set; } = String.Empty;
+		public string EmailAddress { get; set; }
 
 		public DateTime? BirthDate { get; set; }
 
@@ -19,5 +23,11 @@ namespace MyGolfStats
 				return !this.BirthDate.HasValue ? null : Convert.ToInt32(Math.Truncate(DateTime.Now.Subtract(this.BirthDate.Value).TotalDays * (1 / 365.242199)));
 			}
 		}
+
+		public bool IsActive { get; set; }
+
+		public DateTime WhenCreated { get; set; }
+
+		public DateTime WhenModified { get; set; }
 	}
 }
