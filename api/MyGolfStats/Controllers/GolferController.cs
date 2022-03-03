@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyGolfStats.Data;
+using MyGolfStats.Models;
 
 namespace MyGolfStats.Controllers
 {

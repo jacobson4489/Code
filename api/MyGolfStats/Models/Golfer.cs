@@ -1,17 +1,24 @@
 #nullable disable
 using System.ComponentModel.DataAnnotations;
 
-namespace MyGolfStats
+namespace MyGolfStats.Models
 {
 	public class Golfer
 	{
 		[Key]
 		public int GolferID { get; set; }
 
+		[Required]
+		[MaxLength(100)]
 		public string FirstName { get; set; }
 
+		[Required]
+		[MaxLength(100)]
 		public string LastName { get; set; }
 
+		[Required]
+		[EmailAddress]
+		[MaxLength(100)]
 		public string EmailAddress { get; set; }
 
 		public DateTime? BirthDate { get; set; }
@@ -24,10 +31,25 @@ namespace MyGolfStats
 			}
 		}
 
+		[MaxLength(100)]
+		public string Nickname { get; set; }
+
+		[Phone]
+		[MaxLength(20)]
+		public string MobilePhone { get; set; }
+
+		public int? AddressID { get; set; }
+		
+		public int? HomeCourseID { get; set; }
+
 		public bool IsActive { get; set; }
+
+		public int? WhoCreatedID { get; set; }
 
 		public DateTime WhenCreated { get; set; }
 
-		public DateTime WhenModified { get; set; }
+		public int? WhoModifiedID { get; set; }
+
+		public DateTime WhenModified { get; set; } = DateTime.UtcNow;
 	}
 }

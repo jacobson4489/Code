@@ -20,7 +20,7 @@ namespace MyGolfStats.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Course>>> GetCourse()
         {
-            return await _context.Course.ToListAsync();
+			return await _context.Course.ToListAsync();
         }
 
         [HttpGet("{courseID}")]
