@@ -31,14 +31,7 @@ namespace MyGolfStats.Models
 		[MaxLength(100)]
 		public string Country { get; set; }
 
+		[Required]
 		public bool IsActive { get; set; }
-
-		public int? WhoCreatedID { get; set; }
-
-		public DateTime WhenCreated { get; set; }
-
-		public int? WhoModifiedID { get; set; }
-
-		public DateTime WhenModified { get; set; }
 	}
 }

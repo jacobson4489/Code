@@ -18,10 +18,6 @@ CREATE TABLE [dbo].[Golfer](
 	[HomeCourseID] [int] NULL,
 	[AddressID] [int] NULL,
 	[IsActive] [bit] NOT NULL DEFAULT 1,
-	[WhoCreatedID] [int] NULL,
-	[WhenCreated] DATETIME NULL DEFAULT GETDATE(),
-	[WhoModifiedID] [int] NULL,
-	[WhenModified] DATETIME NULL DEFAULT GETDATE()
 	PRIMARY KEY CLUSTERED 
 	(
 		[GolferID] ASC
@@ -29,10 +25,10 @@ CREATE TABLE [dbo].[Golfer](
 	) ON [PRIMARY]
 GO
 
-INSERT INTO Golfer (FirstName, LastName, EmailAddress, BirthDate, AddressID) VALUES ('Tony', 'Jacobson', 'jacobson4489@gmail.com', '1982-06-26', 1)
-INSERT INTO Golfer (FirstName, LastName, EmailAddress, BirthDate) VALUES ('Mark', 'Jacobson', '', '1982-06-26')
-INSERT INTO Golfer (FirstName, LastName, EmailAddress, BirthDate, Nickname) VALUES ('Eric', 'Leonardson', '', '1979-08-26', 'Big Dog')
-INSERT INTO Golfer (FirstName, LastName, EmailAddress) VALUES ('Brad', 'Mikulice', '')
+INSERT INTO Golfer (FirstName, LastName, EmailAddress, BirthDate) VALUES ('Tony', 'Jacobson', 'jacobson4489@gmail.com', '1982-06-26')
+INSERT INTO Golfer (FirstName, LastName, EmailAddress, BirthDate) VALUES ('Mark', 'Jacobson', 'none@mail.com', '1982-06-26')
+INSERT INTO Golfer (FirstName, LastName, EmailAddress, BirthDate, Nickname) VALUES ('Eric', 'Leonardson', 'none@mail.com', '1979-08-26', 'Big Dog')
+INSERT INTO Golfer (FirstName, LastName, EmailAddress) VALUES ('Brad', 'Mikulice', 'none@mail.com')
 
 SELECT *
 FROM Golfer

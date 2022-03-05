@@ -22,10 +22,6 @@ CREATE TABLE [dbo].[Address](
 	[PostalCode] [varchar](50) NOT NULL,
 	[Country] [varchar](100) NOT NULL,
 	[IsActive] [bit] NOT NULL DEFAULT 1,
-	[WhoCreatedID] [int] NULL,
-	[WhenCreated] DATETIME NOT NULL DEFAULT GETDATE(),
-	[WhoModifiedID] [int] NULL,
-	[WhenModified] DATETIME NOT NULL DEFAULT GETDATE()
 	PRIMARY KEY CLUSTERED 
 	(
 		[AddressID] ASC
@@ -44,6 +40,7 @@ ALTER TABLE [dbo].[Course] ADD CONSTRAINT fk_Course_AddressID__Address_AddressID
 GO
 
 INSERT INTO Address (Address1, City, State, PostalCode, Country) VALUES ('8652 S Roxbury Way', 'Oak Creek', 'WI', '53154', 'United States')
+UPDATE Golfer SET AddressID = 1 WHERE GolferID = 1
 
 SELECT *
 FROM Address

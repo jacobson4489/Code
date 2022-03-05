@@ -9,10 +9,6 @@
       <th scope="col">PostalCode</th>
       <th scope="col">Country</th>
       <th scope="col">IsActive</th>
-      <th scope="col">WhoCreatedID</th>
-      <th scope="col">WhenCreated</th>
-      <th scope="col">WhoModifiedID</th>
-      <th scope="col">WhenModified</th>
     <tr>
   </thead>
   <tbody>
@@ -25,10 +21,6 @@
       <td>{{ address.postalCode}}</td>
       <td>{{ address.country}}</td>
       <td>{{ address.isActive}}</td>
-      <td>{{ address.whoCreatedID }}</td>
-      <td>{{ address.whenCreated | date: 'M/d/yyyy HH:mm:ss' }}</td>
-      <td>{{ address.whoModifiedID }}</td>
-      <td>{{ address.whenModified | date: 'M/d/yyyy HH:mm:ss' }}</td>
     </tr>
   </tbody>
 </table>

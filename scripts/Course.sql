@@ -15,10 +15,6 @@ CREATE TABLE [dbo].[Course](
 	[Name] [varchar](100) NOT NULL,
 	[AddressID] [int] NULL,
 	[IsActive] [bit] NOT NULL DEFAULT 1,
-	[WhoCreatedID] [int] NULL,
-	[WhenCreated] DATETIME NOT NULL DEFAULT GETDATE(),
-	[WhoModifiedID] [int] NULL,
-	[WhenModified] DATETIME NOT NULL DEFAULT GETDATE()
 	PRIMARY KEY CLUSTERED 
 	(
 		[CourseID] ASC

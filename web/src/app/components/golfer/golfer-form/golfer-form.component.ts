@@ -56,14 +56,12 @@ export class GolferFormComponent implements OnInit {
   }
 
   insertGolfer() {
-    console.log('insert =', this.golfer);
     this.golferService.insertGolfer(this.golfer).subscribe((response) => {
       this.golfer = response;
     });
   }
 
   updateGolfer() {
-    console.log('update =', this.golfer);
     this.golferService.updateGolfer(this.golfer.golferID, this.golfer).subscribe((response) => {
       this.golfer = response;
     })

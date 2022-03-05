@@ -42,14 +42,7 @@ namespace MyGolfStats.Models
 		
 		public int? HomeCourseID { get; set; }
 
+		[Required]
 		public bool IsActive { get; set; }
-
-		public int? WhoCreatedID { get; set; }
-
-		public DateTime WhenCreated { get; set; }
-
-		public int? WhoModifiedID { get; set; }
-
-		public DateTime WhenModified { get; set; } = DateTime.UtcNow;
 	}
 }
