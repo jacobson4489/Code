@@ -1,4 +1,4 @@
-<form class="form-horizontal" (ngSubmit)="onSubmit()" #golferForm="ngForm">
+<form class="form-horizontal" #golferForm="ngForm">
   <div class="form-group mb-3">
     <label class="control-label col-sm-2" for="firstName">First Name</label>
     <div class="col-sm-10">
@@ -73,20 +73,20 @@
   </div>
 
   <div class="form-group mb-3">
-    <label class="control-label col-sm-2" for="addressID">Address</label>
-    <div class="col-sm-10">
-      <input class="form-control" type="textbox" name="address" id="address" [(ngModel)]="golfer.addressID"
-        name="address" #address="ngModel" placeholder="Enter address">
-    </div>
-  </div>
-
-  <div class="form-group mb-3">
     <label class="control-label col-sm-2" for="homeCourseID">Home Course</label>
     <div class="col-sm-10">
       <select class="form-control" id="homeCourseID" [(ngModel)]="golfer.homeCourseID" name="homeCourseID"
         #homeCourseID="ngModel">
         <option *ngFor="let course of courses" [value]="course.courseID">{{ course.name }}</option>
       </select>
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label class="control-label col-sm-2" for="addressID">Address</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="textbox" name="address" id="address" [(ngModel)]="golfer.addressID"
+        name="address" #address="ngModel" placeholder="Enter address">
     </div>
   </div>
 
@@ -97,6 +97,10 @@
 
   <button type="cancel" class="btn btn-secondary" (click)="onCancel()">
     Cancel
+  </button>
+
+  <button type="cancel" class="btn btn-secondary" (click)="onDelete()" *ngIf='!isInsert'>
+    Delete
   </button>
 
   <button type="submit" class="btn btn-secondary" (click)="onNew()" *ngIf='!isInsert'>

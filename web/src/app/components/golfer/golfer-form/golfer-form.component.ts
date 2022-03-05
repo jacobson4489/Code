@@ -58,6 +58,7 @@ export class GolferFormComponent implements OnInit {
   insertGolfer() {
     this.golferService.insertGolfer(this.golfer).subscribe((response) => {
       this.golfer = response;
+      this.isInsert = false;
     });
   }
 
