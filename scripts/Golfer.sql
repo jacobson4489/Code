@@ -31,7 +31,7 @@ GO
 
 INSERT INTO Golfer (FirstName, LastName, EmailAddress, AddressID) VALUES ('Tony', 'Jacobson', 'jacobson4489@gmail.com', 1)
 INSERT INTO Golfer (FirstName, LastName, EmailAddress) VALUES ('Mark', 'Jacobson', '')
-INSERT INTO Golfer (FirstName, LastName, EmailAddress, Nickname) VALUES ('Eric', 'Jacobson', '', 'Big Dog')
+INSERT INTO Golfer (FirstName, LastName, EmailAddress, Nickname) VALUES ('Eric', 'Leonardson', '', 'Big Dog')
 INSERT INTO Golfer (FirstName, LastName, EmailAddress) VALUES ('Brad', 'Mikulice', '')
 
 SELECT *

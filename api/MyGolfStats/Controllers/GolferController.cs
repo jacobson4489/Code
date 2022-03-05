@@ -23,10 +23,10 @@ namespace MyGolfStats.Controllers
             return await _context.Golfer.ToListAsync();
         }
 
-        [HttpGet("{golferId}")]
-        public async Task<ActionResult<Golfer>> GetGolfer(int golferId)
+        [HttpGet("{golferID}")]
+        public async Task<ActionResult<Golfer>> GetGolfer(int golferID)
         {
-            var golfer = await _context.Golfer.FindAsync(golferId);
+            var golfer = await _context.Golfer.FindAsync(golferID);
             if (golfer == null)
             {
                 return NotFound();
@@ -35,10 +35,10 @@ namespace MyGolfStats.Controllers
             return golfer;
         }
 
-        [HttpPut("{golferId}")]
-        public async Task<IActionResult> PutGolfer(int golferId, Golfer golfer)
+        [HttpPut("{golferID}")]
+        public async Task<IActionResult> PutGolfer(int golferID, Golfer golfer)
         {
-            if (golferId != golfer.GolferID)
+            if (golferID != golfer.GolferID)
             {
                 return BadRequest();
             }
@@ -51,7 +51,7 @@ namespace MyGolfStats.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!this.GolferExists(golferId))
+                if (!this.GolferExists(golferID))
                 {
                     return NotFound();
                 }
@@ -72,10 +72,10 @@ namespace MyGolfStats.Controllers
             return CreatedAtAction("PostGolfer", new { id = golfer.GolferID }, golfer);
         }
 
-        [HttpDelete("{golferId}")]
-        public async Task<IActionResult> DeleteGolfer(int golferId)
+        [HttpDelete("{golferID}")]
+        public async Task<IActionResult> DeleteGolfer(int golferID)
         {
-            var golfer = await _context.Golfer.FindAsync(golferId);
+            var golfer = await _context.Golfer.FindAsync(golferID);
             if (golfer == null)
             {
                 return NotFound();
@@ -86,9 +86,9 @@ namespace MyGolfStats.Controllers
             return NoContent();
         }
 
-        private bool GolferExists(int golferId)
+        private bool GolferExists(int golferID)
         {
-            return _context.Golfer.Any(e => e.GolferID == golferId);
+            return _context.Golfer.Any(e => e.GolferID == golferID);
         }
     }
 }

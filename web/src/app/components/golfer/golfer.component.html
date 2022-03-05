@@ -1,4 +1,30 @@
-<div>Name:   {{ golfer.firstName }} {{ golfer.lastName }}</div>
-<div>Email:   {{ golfer.emailAddress }}</div>
-<div>Birth Date:   {{ golfer.birthDate | date: 'M/d/yyyy'}}</div>
-<div>Age:   {{ golfer.age }}</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">GolferID</th>
+      <th scope="col">Name</th>
+      <th scope="col">EmailAddress</th>
+      <th scope="col">BirthDate</th>
+      <th scope="col">Age</th>
+      <th scope="col">Nickname</th>
+      <th scope="col">MobilePhone</th>
+      <th scope="col">AddressID</th>
+      <th scope="col">HomeCourseID</th>
+      <th scope="col">IsActive</th>
+    <tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let golfer of golfers">
+      <th scope="row">{{ golfer.golferID }}</th>
+      <td>{{ golfer.firstName }} {{ golfer.lastName }}</td>
+      <td>{{ golfer.emailAddress }}</td>
+      <td>{{ golfer.birthDate | date: 'M/d/yyyy'}}</td>
+      <td>{{ golfer.age }}</td>
+      <td>{{ golfer.nickname }}</td>
+      <td>{{ golfer.mobilePhone }}</td>
+      <td>{{ golfer.addressID }}</td>
+      <td>{{ golfer.homeCourseID }}</td>
+      <td>{{ golfer.isActive }}</td>
+    </tr>
+  </tbody>
+</table>

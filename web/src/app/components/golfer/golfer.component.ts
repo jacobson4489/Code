@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Golfer } from '../../models/Golfer/Golfer'
+import { Golfer } from '../../models/Golfer'
 import { GolferService } from '../../services/golfer/golfer.service'
 
 @Component({
@@ -9,23 +9,17 @@ import { GolferService } from '../../services/golfer/golfer.service'
 })
 
 export class GolferComponent implements OnInit {
-  golfer: Golfer = new Golfer();
+  golfers: Golfer[];
 
   constructor(private golferService: GolferService) { }
 
   ngOnInit() {
-    this.getGolfer(1);
-  }
-
-  private getGolfer(id: number) {
-    this.golferService.getById(id).subscribe(response => {
-      this.golfer = response;
-    });
+    this.getAllGolfers();
   }
 
   private getAllGolfers() {
     this.golferService.getAll().subscribe(response => {
-      this.golfer = response[2];
+      this.golfers = response;
     });
   }
 }
