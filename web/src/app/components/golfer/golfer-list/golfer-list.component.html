@@ -1,5 +1,5 @@
-<table class="table">
-  <thead>
+<table class="table table-striped">
+  <thead class="table-dark">
     <tr>
       <th scope="col">GolferID</th>
       <th scope="col">Name</th>
@@ -11,6 +11,10 @@
       <th scope="col">AddressID</th>
       <th scope="col">HomeCourseID</th>
       <th scope="col">IsActive</th>
+      <th scope="col">WhoCreatedID</th>
+      <th scope="col">WhenCreated</th>
+      <th scope="col">WhoModifiedID</th>
+      <th scope="col">WhenModified</th>
     <tr>
   </thead>
   <tbody>
@@ -25,6 +29,10 @@
       <td>{{ golfer.addressID }}</td>
       <td>{{ golfer.homeCourseID }}</td>
       <td>{{ golfer.isActive }}</td>
+      <td>{{ golfer.whoCreatedID }}</td>
+      <td>{{ golfer.whenCreated | date: 'M/d/yyyy HH:mm:ss' }}</td>
+      <td>{{ golfer.whoModifiedID }}</td>
+      <td>{{ golfer.whenModified | date: 'M/d/yyyy HH:mm:ss' }}</td>
     </tr>
   </tbody>
 </table>

@@ -36,7 +36,7 @@ namespace MyGolfStats.Controllers
         }
 
         [HttpPut("{golferID}")]
-        public async Task<IActionResult> PutGolfer(int golferID, Golfer golfer)
+        public async Task<ActionResult<Golfer>> PutGolfer(int golferID, Golfer golfer)
         {
             if (golferID != golfer.GolferID)
             {
@@ -61,7 +61,7 @@ namespace MyGolfStats.Controllers
                 }
             }
 
-            return NoContent();
+			return golfer;
         }
 
         [HttpPost]
@@ -69,8 +69,8 @@ namespace MyGolfStats.Controllers
         {
             _context.Golfer.Add(golfer);
             await _context.SaveChangesAsync();
-            return CreatedAtAction("PostGolfer", new { id = golfer.GolferID }, golfer);
-        }
+            return golfer;
+		}
 
         [HttpDelete("{golferID}")]
         public async Task<IActionResult> DeleteGolfer(int golferID)

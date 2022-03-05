@@ -12,13 +12,23 @@ export class GolferService {
 
   constructor(private http: HttpClient) { }
 
-  public getAll(): Observable<Golfer[]>{
+  public getAllGolfers(): Observable<Golfer[]>{
     const path = this.golferApiUrl;
     return this.http.get<Golfer[]>(path);
   }
 
-  public getById(golferID: number): Observable<Golfer> {
+  public getGolferById(golferID: number): Observable<Golfer> {
     const path = this.golferApiUrl + `/${golferID}`;
     return this.http.get<Golfer>(path);
+  }
+
+  public insertGolfer(golfer: Golfer): Observable<Golfer> {
+    const path = this.golferApiUrl;
+    return this.http.post<Golfer>(path, golfer);
+  }
+
+  public updateGolfer(golferID: number, golfer: Golfer): Observable<Golfer> {
+    const path = this.golferApiUrl + `/${golferID}`;
+    return this.http.put<Golfer>(path, golfer);
   }
 }

@@ -29,9 +29,9 @@ CREATE TABLE [dbo].[Golfer](
 	) ON [PRIMARY]
 GO
 
-INSERT INTO Golfer (FirstName, LastName, EmailAddress, AddressID) VALUES ('Tony', 'Jacobson', 'jacobson4489@gmail.com', 1)
-INSERT INTO Golfer (FirstName, LastName, EmailAddress) VALUES ('Mark', 'Jacobson', '')
-INSERT INTO Golfer (FirstName, LastName, EmailAddress, Nickname) VALUES ('Eric', 'Leonardson', '', 'Big Dog')
+INSERT INTO Golfer (FirstName, LastName, EmailAddress, BirthDate, AddressID) VALUES ('Tony', 'Jacobson', 'jacobson4489@gmail.com', '1982-06-26', 1)
+INSERT INTO Golfer (FirstName, LastName, EmailAddress, BirthDate) VALUES ('Mark', 'Jacobson', '', '1982-06-26')
+INSERT INTO Golfer (FirstName, LastName, EmailAddress, BirthDate, Nickname) VALUES ('Eric', 'Leonardson', '', '1979-08-26', 'Big Dog')
 INSERT INTO Golfer (FirstName, LastName, EmailAddress) VALUES ('Brad', 'Mikulice', '')
 
 SELECT *

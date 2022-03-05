@@ -36,7 +36,7 @@ namespace MyGolfStats.Controllers
         }
 
         [HttpPut("{courseID}")]
-        public async Task<IActionResult> PutCourse(int courseID, Course course)
+        public async Task<ActionResult<Course>> PutCourse(int courseID, Course course)
         {
             if (courseID != course.CourseID)
             {
@@ -61,7 +61,7 @@ namespace MyGolfStats.Controllers
                 }
             }
 
-            return NoContent();
+			return course;
         }
 
         [HttpPost]
@@ -69,7 +69,7 @@ namespace MyGolfStats.Controllers
         {
             _context.Course.Add(course);
             await _context.SaveChangesAsync();
-            return CreatedAtAction("PostCourse", new { courseID = course.CourseID }, course);
+			return course;
         }
 
         [HttpDelete("{courseID}")]

@@ -1,0 +1,26 @@
+<table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">CourseID</th>
+      <th scope="col">Name</th>
+      <th scope="col">AddressID</th>
+      <th scope="col">IsActive</th>
+      <th scope="col">WhoCreatedID</th>
+      <th scope="col">WhenCreated</th>
+      <th scope="col">WhoModifiedID</th>
+      <th scope="col">WhenModified</th>
+    <tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let course of courses">
+      <th scope="row">{{ course.courseID }}</th>
+      <td>{{ course.name }}</td>
+      <td>{{ course.addressID }}</td>
+      <td>{{ course.isActive}}</td>
+      <td>{{ course.whoCreatedID }}</td>
+      <td>{{ course.whenCreated | date: 'M/d/yyyy HH:mm:ss' }}</td>
+      <td>{{ course.whoModifiedID }}</td>
+      <td>{{ course.whenModified | date: 'M/d/yyyy HH:mm:ss' }}</td>
+    </tr>
+  </tbody>
+</table>

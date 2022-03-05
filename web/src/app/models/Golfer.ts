@@ -10,4 +10,8 @@ export class Golfer {
   public addressID: number;
   public homeCourseID: number;
   public isActive: boolean;
+  public whoCreatedID: number;
+  public whenCreated: Date;
+  public whoModifiedID: number;
+  public whenModified: Date;
 }
