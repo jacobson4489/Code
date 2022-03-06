@@ -17,13 +17,13 @@ namespace MyGolfStats.Controllers
             _context = context;
         }
 
-        [HttpGet]
+        [HttpGet("GetAllAddresses")]
         public async Task<ActionResult<IEnumerable<Address>>> GetAddress()
         {
             return await _context.Address.ToListAsync();
         }
 
-        [HttpGet("{addressID}")]
+        [HttpGet("GetAddressByAddressID/{addressID}")]
         public async Task<ActionResult<Address>> GetAddress(int addressID)
         {
             var address = await _context.Address.FindAsync(addressID);
@@ -35,7 +35,7 @@ namespace MyGolfStats.Controllers
             return address;
         }
 
-        [HttpPut("{addressID}")]
+        [HttpPut("UpdateAddressByAddressID/{addressID}")]
         public async Task<IActionResult> PutAddress(int addressID, Address address)
         {
             if (addressID != address.AddressID)
@@ -64,7 +64,7 @@ namespace MyGolfStats.Controllers
             return NoContent();
         }
 
-        [HttpPost]
+        [HttpPost("InsertAddress")]
         public async Task<ActionResult<Address>> PostAddress(Address address)
         {
             _context.Address.Add(address);
@@ -72,7 +72,7 @@ namespace MyGolfStats.Controllers
             return CreatedAtAction("PostAddress", new { addressID = address.AddressID }, address);
         }
 
-        [HttpDelete("{addressID}")]
+        [HttpDelete("DeleteAddressByAddressID/{addressID}")]
         public async Task<IActionResult> DeleteAddress(int addressID)
         {
             var address = await _context.Address.FindAsync(addressID);

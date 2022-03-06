@@ -13,12 +13,12 @@ export class AddressService {
   constructor(private http: HttpClient) { }
 
   public getAll(): Observable<Address[]>{
-    const path = this.addressApiUrl;
+    const path = this.addressApiUrl + '/GetAllAddresses';
     return this.http.get<Address[]>(path);
   }
 
   public getById(addressID: number): Observable<Address> {
-    const path = this.addressApiUrl + `/${addressID}`;
+    const path = this.addressApiUrl + `/GetAddressByID/${addressID}`;
     return this.http.get<Address>(path);
   }
 }

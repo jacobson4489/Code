@@ -17,13 +17,13 @@ namespace MyGolfStats.Controllers
             _context = context;
         }
 
-        [HttpGet]
+        [HttpGet("GetAllGolfers")]
         public async Task<ActionResult<IEnumerable<Golfer>>> GetGolfer()
         {
             return await _context.Golfer.ToListAsync();
         }
 
-        [HttpGet("{golferID}")]
+        [HttpGet("GetGolferByGolferID/{golferID}")]
         public async Task<ActionResult<Golfer>> GetGolfer(int golferID)
         {
             var golfer = await _context.Golfer.FindAsync(golferID);
@@ -35,7 +35,7 @@ namespace MyGolfStats.Controllers
             return golfer;
         }
 
-        [HttpPut("{golferID}")]
+        [HttpPut("UpdateGolferByGolferID/{golferID}")]
         public async Task<ActionResult<Golfer>> PutGolfer(int golferID, Golfer golfer)
         {
             if (golferID != golfer.GolferID)
@@ -64,7 +64,7 @@ namespace MyGolfStats.Controllers
 			return golfer;
         }
 
-        [HttpPost]
+        [HttpPost("InsertGolfer")]
         public async Task<ActionResult<Golfer>> PostGolfer(Golfer golfer)
         {
             _context.Golfer.Add(golfer);
@@ -72,7 +72,7 @@ namespace MyGolfStats.Controllers
             return golfer;
 		}
 
-        [HttpDelete("{golferID}")]
+        [HttpDelete("DeleteGolferByGolferID/{golferID}")]
         public async Task<IActionResult> DeleteGolfer(int golferID)
         {
             var golfer = await _context.Golfer.FindAsync(golferID);

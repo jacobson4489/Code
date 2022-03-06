@@ -10452,11 +10452,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jacob\\Documents\\Code\\GolfStats\\api\\MyGolfStats\\MyGolfStats.csproj",
+      "projectUniqueName": "C:\\Users\\jacob\\Documents\\Code\\MyGolfStats\\api\\MyGolfStats\\MyGolfStats.csproj",
       "projectName": "MyGolfStats",
-      "projectPath": "C:\\Users\\jacob\\Documents\\Code\\GolfStats\\api\\MyGolfStats\\MyGolfStats.csproj",
+      "projectPath": "C:\\Users\\jacob\\Documents\\Code\\MyGolfStats\\api\\MyGolfStats\\MyGolfStats.csproj",
       "packagesPath": "C:\\Users\\jacob\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jacob\\Documents\\Code\\GolfStats\\api\\MyGolfStats\\obj\\",
+      "outputPath": "C:\\Users\\jacob\\Documents\\Code\\MyGolfStats\\api\\MyGolfStats\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
