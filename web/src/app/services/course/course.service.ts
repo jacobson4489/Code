@@ -13,12 +13,12 @@ export class CourseService {
   constructor(private http: HttpClient) { }
 
   public getAll(): Observable<Course[]>{
-    const path = this.courseApiUrl;
+    const path = this.courseApiUrl + '/GetAllCourses';
     return this.http.get<Course[]>(path);
   }
 
   public getById(courseID: number): Observable<Course> {
-    const path = this.courseApiUrl + `/${courseID}`;
+    const path = this.courseApiUrl + `/GetCourseByCourseID/${courseID}`;
     return this.http.get<Course>(path);
   }
 }

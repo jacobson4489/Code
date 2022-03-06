@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "e7Qh1pmN3excEAdJlpbc1I78fkZ5F2sUyvPsCMwoQbZkJN0+Bq+K+IbL7xmzva10PNuQ554h0KGWXIPuDPpo2Q==",
+  "dgSpecHash": "3ZSkkGcnBO5hNGKKcKrAzM325+pL7sXBQPJsBvxrhVJmv1XC4GAIrv+zvqseljJDgqBJ/NvNRWM2yGEJn9IV9w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jacob\\Documents\\Code\\GolfStats\\api\\MyGolfStats\\MyGolfStats.csproj",
+  "projectFilePath": "C:\\Users\\jacob\\Documents\\Code\\MyGolfStats\\api\\MyGolfStats\\MyGolfStats.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jacob\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\jacob\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
