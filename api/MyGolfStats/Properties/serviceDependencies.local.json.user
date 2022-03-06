@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "restored": true,
+      "restoreTime": "2022-03-01T08:22:02.7547743Z"
+    },
+    "secrets1": {
+      "restored": true,
+      "restoreTime": "2022-03-01T07:56:39.0237683Z"
+    }
+  },
+  "parameters": {
+    "mssql1.subscriptionId": {
+      "Name": "mssql1.subscriptionId",
+      "Type": "subscription",
+      "Value": "85e96f46-aba2-469c-a1b2-6fe619a0a420"
+    },
+    "mssql1.resourceGroupName": {
+      "Name": "mssql1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "my-golf-stats-dev"
+    }
+  }
+}

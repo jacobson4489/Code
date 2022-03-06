@@ -1,0 +1,109 @@
+<form class="form-horizontal" #golferForm="ngForm">
+  <div class="form-group mb-3">
+    <label class="control-label col-sm-2" for="firstName">First Name</label>
+    <div class="col-sm-10">
+      <input required class="form-control" type="text" name="firstName" id="firstName" [(ngModel)]="golfer.firstName"
+        name="firstName" #firstName="ngModel" placeholder="Enter first name">
+      <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">
+        First Name is required
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label class="control-label col-sm-2" for="lastName">Last Name</label>
+    <div class="col-sm-10">
+      <input required class="form-control" type="text" name="lastName" id="lastName" [(ngModel)]="golfer.lastName"
+        name="lastName" #lastName="ngModel" placeholder="Enter last name">
+      <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">
+        Last Name is required
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label class="control-label col-sm-2" for="nickname">Nickname</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" name="nickname" id="nickname" [(ngModel)]="golfer.nickname"
+        name="nickname" #nickname="ngModel" placeholder="Enter nickname">
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label class="control-label col-sm-2" for="emailAddress">Email Address</label>
+    <div class="col-sm-10">
+      <input required class="form-control" type="text" name="emailAddress" id="emailAddress"
+        [(ngModel)]="golfer.emailAddress" name="emailAddress" #emailAddress="ngModel" placeholder="Enter email address">
+      <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">
+        Email Address is required
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label class="control-label col-sm-2" for="birthdate">Birth Date</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" name="birthdate" id="birthdate" [(ngModel)]="golfer.birthDate"
+        name="birthDate" #birthDate="ngModel" placeholder="Enter birth date">
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label class="control-label col-sm-2" for="age">Age</label>
+    <div class="col-sm-10">
+      <input readonly class="form-control" type="text" name="age" id="age" [(ngModel)]="golfer.age" name="age"
+        #age="ngModel">
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label class="control-label col-sm-2" for="isActive">Active</label>
+    <div class="col-sm-10">
+      <input type="checkbox" name="isActive" id="isActive" [(ngModel)]="golfer.isActive" name="isActive"
+        #isActive="ngModel">
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label class="control-label col-sm-2" for="mobilePhone">Mobile Phone</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" name="mobilePhone" id="mobilePhone" [(ngModel)]="golfer.mobilePhone"
+        name="mobilePhone" #mobilePhone="ngModel" placeholder="Enter mobile phone">
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label class="control-label col-sm-2" for="homeCourseID">Home Course</label>
+    <div class="col-sm-10">
+      <select class="form-control" id="homeCourseID" [(ngModel)]="golfer.homeCourseID" name="homeCourseID"
+        #homeCourseID="ngModel">
+        <option *ngFor="let course of courses" [value]="course.courseID">{{ course.name }}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label class="control-label col-sm-2" for="addressID">Address</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="textbox" name="address" id="address" [(ngModel)]="golfer.addressID"
+        name="address" #address="ngModel" placeholder="Enter address">
+    </div>
+  </div>
+
+  <button type="submit" [ngClass]="golferForm.form.valid ? 'btn btn-primary' : 'btn btn-secondary'"
+    (click)="onSubmit()">
+    {{ isInsert ? 'Save' : 'Update' }}
+  </button>
+
+  <button type="cancel" class="btn btn-secondary" (click)="onCancel()">
+    Cancel
+  </button>
+
+  <button type="cancel" class="btn btn-secondary" (click)="onDelete()" *ngIf='!isInsert'>
+    Delete
+  </button>
+
+  <button type="submit" class="btn btn-secondary" (click)="onNew()" *ngIf='!isInsert'>
+    New
+  </button>
+</form>

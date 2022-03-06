@@ -1,38 +1,94 @@
+﻿#nullable disable
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MyGolfStats.Data;
+using MyGolfStats.Models;
 
 namespace MyGolfStats.Controllers
 {
-	[ApiController]
-	[Route("[controller]")]
-	public class GolferController : ControllerBase
-	{
-		private readonly ILogger<GolferController> _logger;
-		private readonly Golfer golfer = new Golfer
-		{
-			Id = 1,
-			FirstName = "Tony",
-			LastName = "Jacobson",
-			BirthDate = new DateTime(1982, 6, 26)
-		};
+	[Route("api/[controller]")]
+    [ApiController]
+    public class GolferController : ControllerBase
+    {
+        private readonly MyGolfStatsContext _context;
 
-		public GolferController(ILogger<GolferController> logger)
-		{
-			_logger = logger;
+        public GolferController(MyGolfStatsContext context)
+        {
+            _context = context;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Golfer>>> GetGolfer()
+        {
+            return await _context.Golfer.ToListAsync();
+        }
+
+        [HttpGet("{golferID}")]
+        public async Task<ActionResult<Golfer>> GetGolfer(int golferID)
+        {
+            var golfer = await _context.Golfer.FindAsync(golferID);
+            if (golfer == null)
+            {
+                return NotFound();
+            }
+
+            return golfer;
+        }
+
+        [HttpPut("{golferID}")]
+        public async Task<ActionResult<Golfer>> PutGolfer(int golferID, Golfer golfer)
+        {
+            if (golferID != golfer.GolferID)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(golfer).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!this.GolferExists(golferID))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+			return golfer;
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Golfer>> PostGolfer(Golfer golfer)
+        {
+            _context.Golfer.Add(golfer);
+            await _context.SaveChangesAsync();
+            return golfer;
 		}
 
-		[HttpGet("GetAll")]
-		public List<Golfer> GetAll()
-		{
-			return new List<Golfer>
-			{
-				golfer
-			};
-		}
+        [HttpDelete("{golferID}")]
+        public async Task<IActionResult> DeleteGolfer(int golferID)
+        {
+            var golfer = await _context.Golfer.FindAsync(golferID);
+            if (golfer == null)
+            {
+                return NotFound();
+            }
 
-		[HttpGet("GetById/{id}")]
-		public Golfer GetById([FromRoute] int id)
-		{
-			return this.golfer;
-		}
-	}
+            _context.Golfer.Remove(golfer);
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
+
+        private bool GolferExists(int golferID)
+        {
+            return _context.Golfer.Any(e => e.GolferID == golferID);
+        }
+    }
 }
