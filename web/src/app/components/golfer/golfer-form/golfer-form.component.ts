@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
 import { Golfer } from '../../../models/Golfer'
 import { GolferService } from '../../../services/golfer/golfer.service'
 import { Course } from '../../../models/Course'
@@ -20,17 +19,16 @@ export class GolferFormComponent implements OnInit {
 
   ngOnInit() {
     this.getAllCourses();
-    this.getGolfer(1);
   }
 
   private getAllCourses() {
-    this.courseService.getAll().subscribe(response => {
+    this.courseService.getAllCourses().subscribe(response => {
       this.courses = response;
     });
   }
 
   private getGolfer(golferId: number) {
-    this.golferService.getGolferById(golferId).subscribe(response => {
+    this.golferService.getGolferByGolferId(golferId).subscribe(response => {
       this.golfer = response;
     });
   }
@@ -50,6 +48,8 @@ export class GolferFormComponent implements OnInit {
   }
 
   onDelete() {
+    this.golferService.deleteGolferByGolferId(this.golfer.golferId).subscribe((response) => {
+    });
   }
 
   onCancel() {
@@ -63,7 +63,7 @@ export class GolferFormComponent implements OnInit {
   }
 
   updateGolfer() {
-    this.golferService.updateGolfer(this.golfer.golferId, this.golfer).subscribe((response) => {
+    this.golferService.updateGolferByGolferId(this.golfer.golferId, this.golfer).subscribe((response) => {
       this.golfer = response;
     })
   }

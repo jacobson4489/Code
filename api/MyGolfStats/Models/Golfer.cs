@@ -36,7 +36,7 @@ namespace MyGolfStats.Models
 
 		[Phone]
 		[MaxLength(20)]
-		public string MobilePhone { get; set; }
+		public string Phone { get; set; }
 
 		[MaxLength(100)]
 		public string Address1 { get; set; }
@@ -57,5 +57,7 @@ namespace MyGolfStats.Models
 
 		[Required]
 		public bool IsActive { get; set; }
+
+		public Course HomeCourse { get; set; }
 	}
 }

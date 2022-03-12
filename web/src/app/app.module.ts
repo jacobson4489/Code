@@ -6,9 +6,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+
 import { GolferListComponent } from './components/golfer/golfer-list/golfer-list.component';
-import { GolferFormComponent } from './components/golfer/golfer-form/golfer-form.component';
 import { CourseListComponent } from './components/course/course-list/course-list.component';
+
+import { GolferFormComponent } from './components/golfer/golfer-form/golfer-form.component';
+import { CourseFormComponent } from './components/course/course-form/course-form.component';
 
 import { GolferService } from './services/golfer/golfer.service';
 import { CourseService } from './services/course/course.service';
@@ -18,8 +21,9 @@ import { CourseService } from './services/course/course.service';
     AppComponent,
     HomeComponent,
     GolferListComponent,
+    CourseListComponent,
     GolferFormComponent,
-    CourseListComponent
+    CourseFormComponent
   ],
   imports: [
     BrowserModule,

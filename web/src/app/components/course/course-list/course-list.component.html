@@ -2,22 +2,28 @@
   <thead class="table-dark">
     <tr>
       <th scope="col">Name</th>
-      <th scope="col">Address1</th>
-      <th scope="col">Address2</th>
-      <th scope="col">City</th>
-      <th scope="col">State</th>
-      <th scope="col">Zip</th>
-      <th scope="col">IsActive</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Address</th>
+      <th scope="col">Active</th>
     <tr>
   </thead>
   <tbody>
     <tr *ngFor="let course of courses">
       <td>{{ course.name }}</td>
-      <td>{{ course.address1 }}</td>
-      <td>{{ course.address2 }}</td>
-      <td>{{ course.city }}</td>
-      <td>{{ course.state }}</td>
-      <td>{{ course.postalCode }}</td>
+      <td>{{ course.emailAddress }}</td>
+      <td>{{ course.phone }}</td>
+      <td>
+        <tr>
+          {{ course.address1 }}
+        </tr>
+        <tr>
+          {{ course.address2 }}
+        </tr>
+        <tr>
+          {{ course.city }}, {{ course.state }} {{ course.postalCode }}
+        </tr>
+      </td>
       <td>{{ course.isActive}}</td>
     </tr>
   </tbody>

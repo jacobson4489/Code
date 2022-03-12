@@ -12,6 +12,14 @@ namespace MyGolfStats.Models
 		[MaxLength(100)]
 		public string Name { get; set; }
 
+		[EmailAddress]
+		[MaxLength(100)]
+		public string EmailAddress { get; set; }
+
+		[Phone]
+		[MaxLength(20)]
+		public string Phone { get; set; }
+
 		[MaxLength(100)]
 		public string Address1 { get; set; }
 

@@ -20,6 +20,7 @@ export class AppComponent {
 
   ngOnInit() {
     this.hideAll();
+    this.onClickHome();
   }
 
   private hideAll() {

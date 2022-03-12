@@ -1,0 +1,91 @@
+<form class="form-horizontal" #courseForm="ngForm">
+  <div class="form-group mb-3">
+    <label class="control-label col-sm-2" for="name">Name</label>
+    <div class="col-sm-10">
+      <input required class="form-control" type="text" name="name" id="name" [(ngModel)]="course.name" name="name"
+        #name="ngModel">
+      <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+        Name is required
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label class="control-label col-sm-2" for="emailAddress">Email Address</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" name="emailAddress" id="emailAddress"
+        [(ngModel)]="course.emailAddress" name="emailAddress" #emailAddress="ngModel">
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label class="control-label col-sm-2" for="phone">Phone</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" name="phone" id="phone" [(ngModel)]="course.phone"
+        name="phone" #phone="ngModel">
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label class="control-label col-sm-2" for="address1">Address Line 1</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" name="address1" id="address1" [(ngModel)]="course.address1"
+        name="address1" #address1="ngModel">
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label class="control-label col-sm-2" for="address2">Address Line 2</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" name="address2" id="address2" [(ngModel)]="course.address2"
+        name="address2" #address2="ngModel">
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label class="control-label col-sm-2" for="city">City</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" name="city" id="city" [(ngModel)]="course.city" name="city"
+        #city="ngModel">
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label class="control-label col-sm-2" for="state">State</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" name="state" id="state" [(ngModel)]="course.state" name="state"
+        #state="ngModel">
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label class="control-label col-sm-2" for="postalCode">Zip</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" name="postalCode" id="postalCode" [(ngModel)]="course.postalCode"
+        name="postalCode" #postalCode="ngModel">
+    </div>
+  </div>
+
+  <div class="form-group form-check form-switch mb-3">
+    <label class="form-check-label" for="isActive">Active</label>
+    <input class="form-check-input" type="checkbox" name="isActive" id="isActive" [(ngModel)]="course.isActive"
+      name="isActive" #isActive="ngModel">
+  </div>
+
+  <button type="submit" [ngClass]="courseForm.form.valid ? 'btn btn-primary' : 'btn btn-secondary'"
+    (click)="onSubmit()">
+    {{ isInsert ? 'Save' : 'Update' }}
+  </button>
+
+  <button type="cancel" class="btn btn-secondary" (click)="onCancel()">
+    Cancel
+  </button>
+
+  <button type="cancel" class="btn btn-secondary" (click)="onDelete()" *ngIf='!isInsert'>
+    Delete
+  </button>
+
+  <button type="submit" class="btn btn-secondary" (click)="onNew()" *ngIf='!isInsert'>
+    New
+  </button>
+</form>

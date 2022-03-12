@@ -3,7 +3,7 @@
     <label class="control-label col-sm-2" for="firstName">First Name</label>
     <div class="col-sm-10">
       <input required class="form-control" type="text" name="firstName" id="firstName" [(ngModel)]="golfer.firstName"
-        name="firstName" #firstName="ngModel" placeholder="Enter first name">
+        name="firstName" #firstName="ngModel">
       <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">
         First Name is required
       </div>
@@ -14,8 +14,8 @@
     <label class="control-label col-sm-2" for="lastName">Last Name</label>
     <div class="col-sm-10">
       <input required class="form-control" type="text" name="lastName" id="lastName" [(ngModel)]="golfer.lastName"
-        name="lastName" #lastName="ngModel" placeholder="Enter last name">
-      <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">
+        name="lastName" #lastName="ngModel">
+      <div [hidden]="lastName.valid || lastName.pristine" class="alert alert-danger">
         Last Name is required
       </div>
     </div>
@@ -25,7 +25,7 @@
     <label class="control-label col-sm-2" for="nickname">Nickname</label>
     <div class="col-sm-10">
       <input class="form-control" type="text" name="nickname" id="nickname" [(ngModel)]="golfer.nickname"
-        name="nickname" #nickname="ngModel" placeholder="Enter nickname">
+        name="nickname" #nickname="ngModel">
     </div>
   </div>
 
@@ -33,8 +33,8 @@
     <label class="control-label col-sm-2" for="emailAddress">Email Address</label>
     <div class="col-sm-10">
       <input required class="form-control" type="text" name="emailAddress" id="emailAddress"
-        [(ngModel)]="golfer.emailAddress" name="emailAddress" #emailAddress="ngModel" placeholder="Enter email address">
-      <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">
+        [(ngModel)]="golfer.emailAddress" name="emailAddress" #emailAddress="ngModel">
+      <div [hidden]="emailAddress.valid || emailAddress.pristine" class="alert alert-danger">
         Email Address is required
       </div>
     </div>
@@ -44,7 +44,7 @@
     <label class="control-label col-sm-2" for="birthdate">Birth Date</label>
     <div class="col-sm-10">
       <input class="form-control" type="text" name="birthdate" id="birthdate" [(ngModel)]="golfer.birthDate"
-        name="birthDate" #birthDate="ngModel" placeholder="Enter birth date">
+        name="birthDate" #birthDate="ngModel">
     </div>
   </div>
 
@@ -56,17 +56,11 @@
     </div>
   </div>
 
-  <div class="form-group form-check form-switch mb-3">
-    <label class="form-check-label" for="isActive">Active</label>
-    <input class="form-check-input" type="checkbox" name="isActive" id="isActive" [(ngModel)]="golfer.isActive" name="isActive"
-        #isActive="ngModel">
-  </div>
-
   <div class="form-group mb-3">
-    <label class="control-label col-sm-2" for="mobilePhone">Mobile Phone</label>
+    <label class="control-label col-sm-2" for="phone">Phone</label>
     <div class="col-sm-10">
-      <input class="form-control" type="text" name="mobilePhone" id="mobilePhone" [(ngModel)]="golfer.mobilePhone"
-        name="mobilePhone" #mobilePhone="ngModel" placeholder="Enter mobile phone">
+      <input class="form-control" type="text" name="phone" id="phone" [(ngModel)]="golfer.phone"
+        name="phone" #phone="ngModel">
     </div>
   </div>
 
@@ -74,7 +68,7 @@
     <label class="control-label col-sm-2" for="address1">Address Line 1</label>
     <div class="col-sm-10">
       <input class="form-control" type="text" name="address1" id="address1" [(ngModel)]="golfer.address1"
-        name="address1" #address1="ngModel" placeholder="Enter address line 1">
+        name="address1" #address1="ngModel">
     </div>
   </div>
 
@@ -82,7 +76,7 @@
     <label class="control-label col-sm-2" for="address2">Address Line 2</label>
     <div class="col-sm-10">
       <input class="form-control" type="text" name="address2" id="address2" [(ngModel)]="golfer.address2"
-        name="address2" #address2="ngModel" placeholder="Enter address line 2">
+        name="address2" #address2="ngModel">
     </div>
   </div>
 
@@ -90,7 +84,7 @@
     <label class="control-label col-sm-2" for="city">City</label>
     <div class="col-sm-10">
       <input class="form-control" type="text" name="city" id="city" [(ngModel)]="golfer.city"
-        name="city" #city="ngModel" placeholder="Enter city">
+        name="city" #city="ngModel">
     </div>
   </div>
 
@@ -98,7 +92,7 @@
     <label class="control-label col-sm-2" for="state">State</label>
     <div class="col-sm-10">
       <input class="form-control" type="text" name="state" id="state" [(ngModel)]="golfer.state"
-        name="state" #state="ngModel" placeholder="Enter state">
+        name="state" #state="ngModel">
     </div>
   </div>
 
@@ -106,7 +100,7 @@
     <label class="control-label col-sm-2" for="postalCode">Zip</label>
     <div class="col-sm-10">
       <input class="form-control" type="text" name="postalCode" id="postalCode" [(ngModel)]="golfer.postalCode"
-        name="postalCode" #postalCode="ngModel" placeholder="Enter zip code">
+        name="postalCode" #postalCode="ngModel">
     </div>
   </div>
 
@@ -118,6 +112,12 @@
         <option *ngFor="let course of courses" [value]="course.courseId">{{ course.name }}</option>
       </select>
     </div>
+  </div>
+
+  <div class="form-group form-check form-switch mb-3">
+    <label class="form-check-label" for="isActive">Active</label>
+    <input class="form-check-input" type="checkbox" name="isActive" id="isActive" [(ngModel)]="golfer.isActive" name="isActive"
+        #isActive="ngModel">
   </div>
 
   <button type="submit" [ngClass]="golferForm.form.valid ? 'btn btn-primary' : 'btn btn-secondary'"

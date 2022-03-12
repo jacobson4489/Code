@@ -18,13 +18,13 @@ namespace MyGolfStats.Controllers
         }
 
         [HttpGet("GetAllCourses")]
-        public async Task<ActionResult<IEnumerable<Course>>> GetCourse()
+        public async Task<ActionResult<IEnumerable<Course>>> GetAllCourses()
         {
 			return await _context.Course.ToListAsync();
         }
 
         [HttpGet("GetCourseByCourseId/{courseId}")]
-        public async Task<ActionResult<Course>> GetCourse(int courseId)
+        public async Task<ActionResult<Course>> GetCourseByCourseId(int courseId)
         {
             var course = await _context.Course.FindAsync(courseId);
             if (course == null)
@@ -73,7 +73,7 @@ namespace MyGolfStats.Controllers
         }
 
         [HttpDelete("DeleteCourseByCourseId/{courseId}")]
-        public async Task<IActionResult> DeleteCourse(int courseId)
+        public async Task<IActionResult> DeleteCourseByCourseId(int courseId)
         {
             var course = await _context.Course.FindAsync(courseId);
             if (course == null)
