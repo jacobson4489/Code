@@ -13,6 +13,8 @@ GO
 CREATE TABLE [dbo].[Course](
 	[CourseId] [int] IdENTITY(1,1) NOT NULL,
 	[Name] [varchar](100) NOT NULL,
+	[EmailAddress] [varchar](100) NULL,
+	[Phone] [varchar](20) NULL,
 	[Address1] [varchar](100) NULL,
 	[Address2] [varchar](100) NULL,
 	[City] [varchar](100) NULL,

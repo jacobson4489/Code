@@ -14,7 +14,7 @@ CREATE TABLE [dbo].[Golfer](
 	[EmailAddress] [varchar](100) NOT NULL,
 	[BirthDate] [datetime] NULL,
 	[Nickname] [varchar](100) NULL,
-	[MobilePhone] [varchar](20) NULL,
+	[Phone] [varchar](20) NULL,
 	[Address1] [varchar](100) NULL,
 	[Address2] [varchar](100) NULL,
 	[City] [varchar](100) NULL,

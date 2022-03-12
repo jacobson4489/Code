@@ -2,6 +2,8 @@
   <thead class="table-dark">
     <tr>
       <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
       <th scope="col">Address</th>
       <th scope="col">Active</th>
     <tr>
@@ -9,6 +11,8 @@
   <tbody>
     <tr *ngFor="let course of courses">
       <td>{{ course.name }}</td>
+      <td>{{ course.emailAddress }}</td>
+      <td>{{ course.phone }}</td>
       <td>
         <tr>
           {{ course.address1 }}

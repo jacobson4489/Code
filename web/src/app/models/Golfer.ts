@@ -7,7 +7,7 @@ export class Golfer {
   public birthDate?: Date;
   public age: number;
   public nickname?: string;
-  public mobilePhone?: string;
+  public phone?: string;
   public address1?: string;
   public address2?: string;
   public city?: string;

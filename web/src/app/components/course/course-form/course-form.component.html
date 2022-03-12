@@ -11,6 +11,22 @@
   </div>
 
   <div class="form-group mb-3">
+    <label class="control-label col-sm-2" for="emailAddress">Email Address</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" name="emailAddress" id="emailAddress"
+        [(ngModel)]="course.emailAddress" name="emailAddress" #emailAddress="ngModel">
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label class="control-label col-sm-2" for="phone">Phone</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" name="phone" id="phone" [(ngModel)]="course.phone"
+        name="phone" #phone="ngModel">
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
     <label class="control-label col-sm-2" for="address1">Address Line 1</label>
     <div class="col-sm-10">
       <input class="form-control" type="text" name="address1" id="address1" [(ngModel)]="course.address1"
