@@ -12,13 +12,28 @@ export class CourseService {
 
   constructor(private http: HttpClient) { }
 
-  public getAll(): Observable<Course[]>{
+  public getAllCourses(): Observable<Course[]>{
     const path = this.courseApiUrl + '/GetAllCourses';
     return this.http.get<Course[]>(path);
   }
 
-  public getById(courseId: number): Observable<Course> {
+  public getCourseByCourseId(courseId: number): Observable<Course> {
     const path = this.courseApiUrl + `/GetCourseByCourseId/${courseId}`;
     return this.http.get<Course>(path);
+  }
+
+  public insertCourse(course: Course): Observable<Course> {
+    const path = this.courseApiUrl + '/InsertCourse';
+    return this.http.post<Course>(path, course);
+  }
+
+  public updateCourseByCourseId(courseId: number, course: Course): Observable<Course> {
+    const path = this.courseApiUrl + `/UpdateCourseByCourseId/${courseId}`;
+    return this.http.put<Course>(path, course);
+  }
+
+  public deleteCourseByCourseId(courseId: number): Observable<string> {
+    const path = this.courseApiUrl + `/DeleteCourseByCourseId/${courseId}`;
+    return this.http.delete<string>(path);
   }
 }

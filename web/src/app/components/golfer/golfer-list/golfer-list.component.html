@@ -2,33 +2,33 @@
   <thead class="table-dark">
     <tr>
       <th scope="col">Name</th>
-      <th scope="col">EmailAddress</th>
-      <th scope="col">BirthDate</th>
-      <th scope="col">Age</th>
+      <th scope="col">Email</th>
+      <th scope="col">Birth Date</th>
       <th scope="col">Nickname</th>
-      <th scope="col">MobilePhone</th>
-      <th scope="col">Address1</th>
-      <th scope="col">Address2</th>
-      <th scope="col">City</th>
-      <th scope="col">State</th>
-      <th scope="col">Zip</th>
-      <th scope="col">HomeCourseId</th>
-      <th scope="col">IsActive</th>
+      <th scope="col">Mobile</th>
+      <th scope="col">Address</th>
+      <th scope="col">Home Course</th>
+      <th scope="col">Active</th>
     <tr>
   </thead>
   <tbody>
     <tr *ngFor="let golfer of golfers">
       <td>{{ golfer.firstName }} {{ golfer.lastName }}</td>
       <td>{{ golfer.emailAddress }}</td>
-      <td>{{ golfer.birthDate | date: 'M/d/yyyy'}}</td>
-      <td>{{ golfer.age }}</td>
+      <td>{{ golfer.birthDate | date: 'MMMM d'}}</td>
       <td>{{ golfer.nickname }}</td>
       <td>{{ golfer.mobilePhone }}</td>
-      <td>{{ golfer.address1 }}</td>
-      <td>{{ golfer.address2 }}</td>
-      <td>{{ golfer.city }}</td>
-      <td>{{ golfer.state }}</td>
-      <td>{{ golfer.postalCode }}</td>
+      <td>
+        <tr>
+          {{ golfer.address1 }}
+        </tr>
+        <tr>
+          {{ golfer.address2 }}
+        </tr>
+        <tr>
+          {{ golfer.city }}, {{ golfer.state }} {{ golfer.postalCode }}
+        </tr>
+      </td>
       <td>{{ golfer.homeCourseId }}</td>
       <td>{{ golfer.isActive }}</td>
     </tr>
