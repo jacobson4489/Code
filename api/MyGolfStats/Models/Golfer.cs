@@ -57,5 +57,7 @@ namespace MyGolfStats.Models
 
 		[Required]
 		public bool IsActive { get; set; }
+
+		public Course HomeCourse { get; set; }
 	}
 }

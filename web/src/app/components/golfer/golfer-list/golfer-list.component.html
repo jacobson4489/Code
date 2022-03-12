@@ -29,7 +29,7 @@
           {{ golfer.city }}, {{ golfer.state }} {{ golfer.postalCode }}
         </tr>
       </td>
-      <td>{{ golfer.homeCourseId }}</td>
+      <td>{{ golfer.homeCourse?.name }}</td>
       <td>{{ golfer.isActive }}</td>
     </tr>
   </tbody>

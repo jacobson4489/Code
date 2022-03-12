@@ -18,15 +18,15 @@ namespace MyGolfStats.Controllers
         }
 
         [HttpGet("GetAllGolfers")]
-        public async Task<ActionResult<IEnumerable<Golfer>>> GetGolfer()
+        public async Task<ActionResult<IEnumerable<Golfer>>> GetAllGolfers()
         {
-            return await _context.Golfer.ToListAsync();
+            return await _context.Golfer.Include(golfer => golfer.HomeCourse).ToListAsync();
         }
 
         [HttpGet("GetGolferByGolferId/{golferId}")]
-        public async Task<ActionResult<Golfer>> GetGolfer(int golferId)
+        public async Task<ActionResult<Golfer>> GetGolferByGolferId(int golferId)
         {
-            var golfer = await _context.Golfer.FindAsync(golferId);
+			var golfer = await _context.Golfer.Where(golfer => golfer.GolferId == golferId).Include(golfer => golfer.HomeCourse).FirstAsync();
             if (golfer == null)
             {
                 return NotFound();
@@ -73,7 +73,7 @@ namespace MyGolfStats.Controllers
 		}
 
         [HttpDelete("DeleteGolferByGolferId/{golferId}")]
-        public async Task<IActionResult> DeleteGolfer(int golferId)
+        public async Task<IActionResult> DeleteGolferByGolferId(int golferId)
         {
             var golfer = await _context.Golfer.FindAsync(golferId);
             if (golfer == null)
