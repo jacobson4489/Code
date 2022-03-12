@@ -5,7 +5,7 @@ import { CourseService } from '../../../services/course/course.service'
 @Component({
   selector: 'app-course-list',
   templateUrl: './course-list.component.html',
-  styleUrls: ['../../../styles/my-golf-stats.component.scss']
+  styleUrls: ['../../../app.component.scss']
 })
 
 export class CourseListComponent implements OnInit {

@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
 import { GolferListComponent } from './components/golfer/golfer-list/golfer-list.component';
 import { GolferFormComponent } from './components/golfer/golfer-form/golfer-form.component';
 import { CourseListComponent } from './components/course/course-list/course-list.component';
@@ -17,6 +18,7 @@ import { AddressService } from './services/address/address.service';
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     GolferListComponent,
     GolferFormComponent,
     CourseListComponent,

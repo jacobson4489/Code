@@ -8,7 +8,7 @@ import { CourseService } from '../../../services/course/course.service'
 @Component({
   selector: 'app-golfer-form',
   templateUrl: './golfer-form.component.html',
-  styleUrls: ['../../../styles/my-golf-stats.component.scss']
+  styleUrls: ['../../../app.component.scss']
 })
 
 export class GolferFormComponent implements OnInit {

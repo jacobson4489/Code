@@ -5,7 +5,7 @@ import { GolferService } from '../../../services/golfer/golfer.service'
 @Component({
   selector: 'app-golfer-list',
   templateUrl: './golfer-list.component.html',
-  styleUrls: ['../../../styles/my-golf-stats.component.scss']
+  styleUrls: ['../../../app.component.scss']
 })
 
 export class GolferListComponent implements OnInit {
