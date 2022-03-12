@@ -1,5 +1,5 @@
 export class Golfer {
-  public golferID: number;
+  public golferId: number;
   public firstName: string;
   public lastName: string;
   public emailAddress: string;
@@ -7,7 +7,11 @@ export class Golfer {
   public age: number;
   public nickname?: string;
   public mobilePhone?: string;
-  public addressID?: number;
-  public homeCourseID?: number;
+  public homeCourseId?: number;
+  public address1?: string;
+  public address2?: string;
+  public city?: string;
+  public state?: string;
+  public postalCode?: string;
   public isActive: boolean = true;
 }

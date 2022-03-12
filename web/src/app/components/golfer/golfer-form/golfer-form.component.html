@@ -56,12 +56,10 @@
     </div>
   </div>
 
-  <div class="form-group mb-3">
-    <label class="control-label col-sm-2" for="isActive">Active</label>
-    <div class="col-sm-10">
-      <input type="checkbox" name="isActive" id="isActive" [(ngModel)]="golfer.isActive" name="isActive"
+  <div class="form-group form-check form-switch mb-3">
+    <label class="form-check-label" for="isActive">Active</label>
+    <input class="form-check-input" type="checkbox" name="isActive" id="isActive" [(ngModel)]="golfer.isActive" name="isActive"
         #isActive="ngModel">
-    </div>
   </div>
 
   <div class="form-group mb-3">
@@ -73,20 +71,52 @@
   </div>
 
   <div class="form-group mb-3">
-    <label class="control-label col-sm-2" for="homeCourseID">Home Course</label>
+    <label class="control-label col-sm-2" for="address1">Address Line 1</label>
     <div class="col-sm-10">
-      <select class="form-control" id="homeCourseID" [(ngModel)]="golfer.homeCourseID" name="homeCourseID"
-        #homeCourseID="ngModel">
-        <option *ngFor="let course of courses" [value]="course.courseID">{{ course.name }}</option>
-      </select>
+      <input class="form-control" type="text" name="address1" id="address1" [(ngModel)]="golfer.address1"
+        name="address1" #address1="ngModel" placeholder="Enter address line 1">
     </div>
   </div>
 
   <div class="form-group mb-3">
-    <label class="control-label col-sm-2" for="addressID">Address</label>
+    <label class="control-label col-sm-2" for="address2">Address Line 2</label>
     <div class="col-sm-10">
-      <input class="form-control" type="textbox" name="address" id="address" [(ngModel)]="golfer.addressID"
-        name="address" #address="ngModel" placeholder="Enter address">
+      <input class="form-control" type="text" name="address2" id="address2" [(ngModel)]="golfer.address2"
+        name="address2" #address2="ngModel" placeholder="Enter address line 2">
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label class="control-label col-sm-2" for="city">City</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" name="city" id="city" [(ngModel)]="golfer.city"
+        name="city" #city="ngModel" placeholder="Enter city">
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label class="control-label col-sm-2" for="state">State</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" name="state" id="state" [(ngModel)]="golfer.state"
+        name="state" #state="ngModel" placeholder="Enter state">
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label class="control-label col-sm-2" for="postalCode">Zip</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" name="postalCode" id="postalCode" [(ngModel)]="golfer.postalCode"
+        name="postalCode" #postalCode="ngModel" placeholder="Enter zip code">
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label class="control-label col-sm-2" for="homeCourseId">Home Course</label>
+    <div class="col-sm-10">
+      <select class="form-control" id="homeCourseId" [(ngModel)]="golfer.homeCourseId" name="homeCourseId"
+        #homeCourseId="ngModel">
+        <option *ngFor="let course of courses" [value]="course.courseId">{{ course.name }}</option>
+      </select>
     </div>
   </div>
 

@@ -23,10 +23,10 @@ namespace MyGolfStats.Controllers
             return await _context.Golfer.ToListAsync();
         }
 
-        [HttpGet("GetGolferByGolferID/{golferID}")]
-        public async Task<ActionResult<Golfer>> GetGolfer(int golferID)
+        [HttpGet("GetGolferByGolferId/{golferId}")]
+        public async Task<ActionResult<Golfer>> GetGolfer(int golferId)
         {
-            var golfer = await _context.Golfer.FindAsync(golferID);
+            var golfer = await _context.Golfer.FindAsync(golferId);
             if (golfer == null)
             {
                 return NotFound();
@@ -35,10 +35,10 @@ namespace MyGolfStats.Controllers
             return golfer;
         }
 
-        [HttpPut("UpdateGolferByGolferID/{golferID}")]
-        public async Task<ActionResult<Golfer>> PutGolfer(int golferID, Golfer golfer)
+        [HttpPut("UpdateGolferByGolferId/{golferId}")]
+        public async Task<ActionResult<Golfer>> PutGolfer(int golferId, Golfer golfer)
         {
-            if (golferID != golfer.GolferID)
+            if (golferId != golfer.GolferId)
             {
                 return BadRequest();
             }
@@ -51,7 +51,7 @@ namespace MyGolfStats.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!this.GolferExists(golferID))
+                if (!this.GolferExists(golferId))
                 {
                     return NotFound();
                 }
@@ -72,10 +72,10 @@ namespace MyGolfStats.Controllers
             return golfer;
 		}
 
-        [HttpDelete("DeleteGolferByGolferID/{golferID}")]
-        public async Task<IActionResult> DeleteGolfer(int golferID)
+        [HttpDelete("DeleteGolferByGolferId/{golferId}")]
+        public async Task<IActionResult> DeleteGolfer(int golferId)
         {
-            var golfer = await _context.Golfer.FindAsync(golferID);
+            var golfer = await _context.Golfer.FindAsync(golferId);
             if (golfer == null)
             {
                 return NotFound();
@@ -86,9 +86,9 @@ namespace MyGolfStats.Controllers
             return NoContent();
         }
 
-        private bool GolferExists(int golferID)
+        private bool GolferExists(int golferId)
         {
-            return _context.Golfer.Any(e => e.GolferID == golferID);
+            return _context.Golfer.Any(e => e.GolferId == golferId);
         }
     }
 }

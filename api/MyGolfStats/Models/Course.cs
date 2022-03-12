@@ -6,13 +6,26 @@ namespace MyGolfStats.Models
 	public class Course
 	{
 		[Key]
-		public int CourseID { get; set; }
+		public int CourseId { get; set; }
 		
 		[Required]
 		[MaxLength(100)]
 		public string Name { get; set; }
 
-		public int? AddressID { get; set; }
+		[MaxLength(100)]
+		public string Address1 { get; set; }
+
+		[MaxLength(100)]
+		public string Address2 { get; set; }
+
+		[MaxLength(100)]
+		public string City { get; set; }
+
+		[MaxLength(2)]
+		public string State { get; set; }
+
+		[MaxLength(50)]
+		public string PostalCode { get; set; }
 
 		[Required]
 		public bool IsActive { get; set; }

@@ -17,8 +17,8 @@ export class CourseService {
     return this.http.get<Course[]>(path);
   }
 
-  public getById(courseID: number): Observable<Course> {
-    const path = this.courseApiUrl + `/GetCourseByCourseID/${courseID}`;
+  public getById(courseId: number): Observable<Course> {
+    const path = this.courseApiUrl + `/GetCourseByCourseId/${courseId}`;
     return this.http.get<Course>(path);
   }
 }

@@ -17,8 +17,8 @@ export class GolferService {
     return this.http.get<Golfer[]>(path);
   }
 
-  public getGolferById(golferID: number): Observable<Golfer> {
-    const path = this.golferApiUrl + `/GetGolferByGolferID/${golferID}`;
+  public getGolferById(golferId: number): Observable<Golfer> {
+    const path = this.golferApiUrl + `/GetGolferByGolferId/${golferId}`;
     return this.http.get<Golfer>(path);
   }
 
@@ -27,8 +27,8 @@ export class GolferService {
     return this.http.post<Golfer>(path, golfer);
   }
 
-  public updateGolfer(golferID: number, golfer: Golfer): Observable<Golfer> {
-    const path = this.golferApiUrl + `/UpdateGolferByGolferID/${golferID}`;
+  public updateGolfer(golferId: number, golfer: Golfer): Observable<Golfer> {
+    const path = this.golferApiUrl + `/UpdateGolferByGolferId/${golferId}`;
     return this.http.put<Golfer>(path, golfer);
   }
 }

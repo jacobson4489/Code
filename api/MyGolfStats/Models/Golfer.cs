@@ -6,7 +6,7 @@ namespace MyGolfStats.Models
 	public class Golfer
 	{
 		[Key]
-		public int GolferID { get; set; }
+		public int GolferId { get; set; }
 
 		[Required]
 		[MaxLength(100)]
@@ -38,9 +38,22 @@ namespace MyGolfStats.Models
 		[MaxLength(20)]
 		public string MobilePhone { get; set; }
 
-		public int? AddressID { get; set; }
-		
-		public int? HomeCourseID { get; set; }
+		[MaxLength(100)]
+		public string Address1 { get; set; }
+
+		[MaxLength(100)]
+		public string Address2 { get; set; }
+
+		[MaxLength(100)]
+		public string City { get; set; }
+
+		[MaxLength(2)]
+		public string State { get; set; }
+
+		[MaxLength(50)]
+		public string PostalCode { get; set; }
+
+		public int? HomeCourseId { get; set; }
 
 		[Required]
 		public bool IsActive { get; set; }
