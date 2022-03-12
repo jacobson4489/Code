@@ -1,6 +1,10 @@
 export class Course {
-  public courseID: number;
+  public courseId: number;
   public name: string;
-  public addressID: number;
+  public address1?: string;
+  public address2?: string;
+  public city?: string;
+  public state?: string;
+  public postalCode?: string;
   public isActive: boolean = true;
 }

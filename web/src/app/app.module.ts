@@ -9,11 +9,9 @@ import { HomeComponent } from './components/home/home.component';
 import { GolferListComponent } from './components/golfer/golfer-list/golfer-list.component';
 import { GolferFormComponent } from './components/golfer/golfer-form/golfer-form.component';
 import { CourseListComponent } from './components/course/course-list/course-list.component';
-import { AddressListComponent } from './components/address/address-list/address-list.component';
 
 import { GolferService } from './services/golfer/golfer.service';
 import { CourseService } from './services/course/course.service';
-import { AddressService } from './services/address/address.service';
 
 @NgModule({
   declarations: [
@@ -21,8 +19,7 @@ import { AddressService } from './services/address/address.service';
     HomeComponent,
     GolferListComponent,
     GolferFormComponent,
-    CourseListComponent,
-    AddressListComponent
+    CourseListComponent
   ],
   imports: [
     BrowserModule,
@@ -32,8 +29,7 @@ import { AddressService } from './services/address/address.service';
   ],
   providers: [
     GolferService,
-    CourseService,
-    AddressService
+    CourseService
   ],
   bootstrap: [AppComponent]
 })

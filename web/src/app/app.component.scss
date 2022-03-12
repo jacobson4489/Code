@@ -43,6 +43,23 @@
 .btn {
   width: 100px;
   text-align: center;
+  border-style: none;
+}
+
+.btn-primary {
+  background-color: darkgreen !important;
+}
+
+.form-check-input {
+  border-color: darkgreen;
+}
+
+.form-check-input:checked {
+  background-color: darkgreen;
+}
+
+.form-check-input:not(:checked) {
+  background-color: transparent;
 }
 
 .table-dark {

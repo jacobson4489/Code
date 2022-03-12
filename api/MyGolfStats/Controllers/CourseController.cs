@@ -23,10 +23,10 @@ namespace MyGolfStats.Controllers
 			return await _context.Course.ToListAsync();
         }
 
-        [HttpGet("GetCourseByCourseID/{courseID}")]
-        public async Task<ActionResult<Course>> GetCourse(int courseID)
+        [HttpGet("GetCourseByCourseId/{courseId}")]
+        public async Task<ActionResult<Course>> GetCourse(int courseId)
         {
-            var course = await _context.Course.FindAsync(courseID);
+            var course = await _context.Course.FindAsync(courseId);
             if (course == null)
             {
                 return NotFound();
@@ -35,10 +35,10 @@ namespace MyGolfStats.Controllers
             return course;
         }
 
-        [HttpPut("UpdateCourseByCourseID/{courseID}")]
-        public async Task<ActionResult<Course>> PutCourse(int courseID, Course course)
+        [HttpPut("UpdateCourseByCourseId/{courseId}")]
+        public async Task<ActionResult<Course>> PutCourse(int courseId, Course course)
         {
-            if (courseID != course.CourseID)
+            if (courseId != course.CourseId)
             {
                 return BadRequest();
             }
@@ -51,7 +51,7 @@ namespace MyGolfStats.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!this.CourseExists(courseID))
+                if (!this.CourseExists(courseId))
                 {
                     return NotFound();
                 }
@@ -72,10 +72,10 @@ namespace MyGolfStats.Controllers
 			return course;
         }
 
-        [HttpDelete("DeleteCourseByCourseID/{courseID}")]
-        public async Task<IActionResult> DeleteCourse(int courseID)
+        [HttpDelete("DeleteCourseByCourseId/{courseId}")]
+        public async Task<IActionResult> DeleteCourse(int courseId)
         {
-            var course = await _context.Course.FindAsync(courseID);
+            var course = await _context.Course.FindAsync(courseId);
             if (course == null)
             {
                 return NotFound();
@@ -86,9 +86,9 @@ namespace MyGolfStats.Controllers
             return NoContent();
         }
 
-        private bool CourseExists(int courseID)
+        private bool CourseExists(int courseId)
         {
-            return _context.Course.Any(e => e.CourseID == courseID);
+            return _context.Course.Any(e => e.CourseId == courseId);
         }
     }
 }

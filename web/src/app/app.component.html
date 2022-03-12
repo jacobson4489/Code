@@ -2,11 +2,10 @@
   <a class="nav-top-home" [ngClass]="showHome ? 'active' : ''" (click)="onClickHome()">My Golf Stats</a>
   <a [ngClass]="showGolferList ? 'active' : ''" (click)="onClickGolfers()">Golfers</a>
   <a [ngClass]="showCourseList ? 'active' : ''" (click)="onClickCourses()">Courses</a>
-  <a [ngClass]="showAddressList ? 'active' : ''" (click)="onClickAddresses()">Addresses</a>
   <a id="navTopCopy" class="nav-top-copy">&copy; {{ today | date: 'yyyy' }} Tony Jacobson</a>
 </div>
 
 <app-home *ngIf="showHome"></app-home>
 <app-golfer-list *ngIf="showGolferList"></app-golfer-list>
+<app-golfer-form *ngIf="showGolferForm"></app-golfer-form>
 <app-course-list *ngIf="showCourseList"></app-course-list>
-<app-address-list *ngIf="showAddressList"></app-address-list>

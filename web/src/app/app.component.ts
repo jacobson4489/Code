@@ -12,9 +12,9 @@ export class AppComponent {
   showHome: boolean = true;
   showGolferList: boolean = true;
   showCourseList: boolean = true;
-  showAddressList: boolean = true;
 
   showGolferForm: boolean = true;
+  showCourseForm: boolean = true;
 
   constructor() { }
 
@@ -26,7 +26,8 @@ export class AppComponent {
     this.showHome = false;
     this.showGolferList = false;
     this.showCourseList = false;
-    this.showAddressList = false;
+    this.showGolferForm = false;
+    this.showCourseForm = false;
   }
 
   onClickHome() {
@@ -37,15 +38,12 @@ export class AppComponent {
   onClickGolfers() {
     this.hideAll();
     this.showGolferList = true;
+    this.showGolferForm = true;
   }
 
   onClickCourses() {
     this.hideAll();
     this.showCourseList = true;
-  }
-
-  onClickAddresses() {
-    this.hideAll();
-    this.showAddressList = true;
+    this.showCourseForm = true;
   }
 }

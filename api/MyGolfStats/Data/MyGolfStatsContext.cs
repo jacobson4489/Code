@@ -14,7 +14,5 @@ namespace MyGolfStats.Data
         public DbSet<Golfer> Golfer { get; set; }
 
         public DbSet<Course> Course { get; set; }
-
-		public DbSet<Address> Address { get; set; }
     }
 }

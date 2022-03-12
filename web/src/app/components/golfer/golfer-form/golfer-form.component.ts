@@ -29,8 +29,8 @@ export class GolferFormComponent implements OnInit {
     });
   }
 
-  private getGolfer(golferID: number) {
-    this.golferService.getGolferById(golferID).subscribe(response => {
+  private getGolfer(golferId: number) {
+    this.golferService.getGolferById(golferId).subscribe(response => {
       this.golfer = response;
     });
   }
@@ -63,7 +63,7 @@ export class GolferFormComponent implements OnInit {
   }
 
   updateGolfer() {
-    this.golferService.updateGolfer(this.golfer.golferID, this.golfer).subscribe((response) => {
+    this.golferService.updateGolfer(this.golfer.golferId, this.golfer).subscribe((response) => {
       this.golfer = response;
     })
   }
