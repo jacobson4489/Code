@@ -5,7 +5,7 @@ import { AddressService } from '../../../services/address/address.service'
 @Component({
   selector: 'app-address-list',
   templateUrl: './address-list.component.html',
-  styleUrls: ['../../../styles/my-golf-stats.component.scss']
+  styleUrls: ['../../../app.component.scss']
 })
 
 export class AddressListComponent implements OnInit {

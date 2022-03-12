@@ -1,0 +1,64 @@
+.nav-top {
+  overflow: hidden;
+  background-color: rgb(0, 70, 0);
+  height: 65px;
+}
+
+.nav-top a {
+  height: 100%;
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.nav-top a.nav-top-home {
+  padding-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-top a.nav-top-copy {
+  padding-top: 23px;
+  font-size: 12px;
+  float: right;
+}
+
+#navTopCopy {
+  background-color: transparent;
+  cursor: default;
+}
+
+.nav-top a:hover {
+  background-color: darkgreen
+}
+
+.nav-top a.active {
+  background-color: darkgreen
+}
+
+.btn {
+  width: 100px;
+  text-align: center;
+}
+
+.table-dark {
+  th {
+    background-color: darkgreen;
+    color: white;
+    text-align: left;
+    font-size: 15px;
+    font-weight: normal;
+  }
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid darkgreen;
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442;
+}
